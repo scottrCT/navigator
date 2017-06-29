@@ -1,0 +1,52 @@
+<% fields_for @survey do |f|%>
+  <%= f.error_messages %>
+ 
+  <p>
+    <%= f.label :resident_of_CT, "Do you live in Connecticut?" %>
+    <%= f.collection_select(:resident_of_CT, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p> 
+  <%= observe_field "survey_resident_of_CT",
+		:url => {:action => "alert_user"},
+		:with => "survey_resident_of_CT"
+  %>  
+  <p>
+    <%= f.label :age, "How old are you?" %>
+    <%= f.text_field(:age, :maxlength=>3, :size=>3, :onkeypress=>"return checkNumber(this, event)", :onchange => "needToConfirm=true") %>
+  </p>
+  <p>
+    <%= f.label :residency_id, "What is your residency status?" %>
+    <%= f.collection_select(:residency_id, @res_status, :id, :status, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  <p>
+    <%= f.label :have_a_spouse, "Do you have a spouse or partner living with you?" %>
+    <%= f.collection_select(:have_a_spouse, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  <!-- Hidden fields -->
+    <%= f.hidden_field :children_under_18 %>
+    <%= f.hidden_field :children_under_13 %>
+    <%= f.hidden_field :children_under_5 %>
+    <%= f.hidden_field :adult_dependants %>
+    <%= f.hidden_field :adult_disability %>
+    <%= f.hidden_field :pregnant %>
+
+    <%= f.hidden_field :currently_employed %>
+    <%= f.hidden_field :spouse_currently_employed %>
+    <%= f.hidden_field :other_income %>
+    <%= f.hidden_field :tax_filing_method_id %>
+    <%= f.hidden_field :approved_training_activity %>
+    <%= f.hidden_field :spouse_approved_training_activity %>
+    <%= f.hidden_field :net_income_amt %>
+    <%= f.hidden_field :net_income_frequency %>	
+    <%= f.hidden_field :spouse_net_income_amt %>
+    <%= f.hidden_field :spouse_net_income_frequency %>		
+    <%= f.hidden_field :other_income_amt %>	
+    <%= f.hidden_field :other_income_frequency %>
+
+  <%= link_to_remote image_tag("nextFamilyInfo.jpg", :id=>"nextFamInfo", :alt=>"Next: Family Information", :style=>"border: 0;", :mouseover => image_path("nextFamilyInfoDn.jpg")), 
+					 :update => "survey_questions", 
+					 :url => {:controller=>'surveys',
+							  :action => 'get_family_details', 
+					          :method => 'get'},
+					 :html=>{:class=>'buttonLink',:id=>'nextFamLink'},
+					 :submit => "frm_screening" %>
+<% end %>

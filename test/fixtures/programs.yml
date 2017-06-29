@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+has_many :program_links
+
+c4k:
+  id: 1
+  name: "Connecticut Care 4 Kids"
+  description: "Care 4 Kids helps pay for child care for low to moderate income families who are working or in job training."
+  
+EITC:
+  id: 2  
+  name: "Earned Income Tax Credit"
+  description: "The Earned Income Tax Credit (EITC is a refundable federal tax benefit for working people with low or moderate incomes. Eligible families or individuals usually receive a tax refund after filing their tax return."
+
+SNAP:
+  id: 3  
+  name: "Food Stamps/SNAP"
+  description: "The Food Stamp program helps low income households buy food."    
+
+UA:
+  id: 4  
+  name: "Utility Assistance - CEAP - CHAP"
+  description: "CEAP and CHAP energy assistance programs provide financial assistance for payment of primary heat bills for households with qualifying incomes. The amount of assistance depends upon household income and family size, type of heat source, and whether heat is included in rent. CEAP has a renter's benefit for households whose heat is included in their rent, but CHAP does not."   

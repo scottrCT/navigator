@@ -1,0 +1,113 @@
+<% fields_for survey do |f|%>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :currently_employed, "Are you currently employed?" %>
+    <%= f.collection_select(:currently_employed, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  
+  <%= observe_field "survey_currently_employed",
+		:url => {:action => "display_net_income_training_div"},
+		:with => "survey_currently_employed"
+  %> 
+    
+  <div id="personal_net_income">
+	  <p>
+	    <%= f.label :net_income_amt, "How much money do you make before taxes and other deductions are taken out and how often do you get paid?" %>
+		<%= link_to image_tag("Help_Icon.png", :size => "25x21", :alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "personal_income_help"}, :popup => ['211NavigatorHelp', 'height=160    ,width=400']%>		
+	    <%= f.text_field :net_income_amt, :maxlength=>12, :size=>8, :onkeypress=>"return checkFloat(this, event)"  %>
+	    <%= f.collection_select(:net_income_frequency, @income_frequency, :annual_multiplier, :frequency, {:include_blank => '---Select One---'}) %>
+	  </p>  
+  </div>
+
+  <div id="self_training_activity">
+	  <p>
+	    <%= f.label :approved_training_activity, "Are you in an approved training activity?" %>
+		<%= link_to image_tag("Help_Icon.png", :size => "25x21", :alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "training_help"}, :popup => ['211NavigatorHelp', 'height=160    ,width=400']%>				
+	    <%= f.collection_select(:approved_training_activity, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}) %>
+	  </p>
+  </div>
+  
+  <% if survey.have_a_spouse == 1%>
+	  <p>
+	    <%= f.label :spouse_currently_employed, "Is your spouse or partner currently employed?" %>
+	    <%= f.collection_select(:spouse_currently_employed, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+	  </p>
+  
+  <%= observe_field "survey_spouse_currently_employed",
+		:url => {:action => "display_spouse_net_income_training_div"},
+		:with => "survey_spouse_currently_employed"
+  %> 
+  
+  
+  <div id="spouse_net_income">  
+	  <p>
+	    <%= f.label :spouse_net_income_amt, "How much money does your spouse/partner make before taxes and other deductions are taken out and how often does your spouse/partner get paid?" %>
+		<%= link_to image_tag("Help_Icon.png", :size => "25x21", :alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "spouse_income_help"}, :popup => ['211NavigatorHelp', 'height=170,width=400']%>		
+	    <%= f.text_field :spouse_net_income_amt, :maxlength=>12, :size=>8, :onkeypress=>"return checkFloat(this, event)" %>
+	    <%= f.collection_select(:spouse_net_income_frequency, @income_frequency, :annual_multiplier, :frequency, {:include_blank => '---Select One---'}) %>
+	  </p>  
+  </div>
+  
+  <div id="spouse_training_activity">  
+	  <p>
+	    <%= f.label :spouse_approved_training_activity, "Is he/she in an approved training activity?" %>
+		<%= link_to image_tag("Help_Icon.png", :size => "25x21", :alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "training_help"}, :popup => ['211NavigatorHelp', 'height=160    ,width=400']%>						
+	    <%= f.collection_select(:spouse_approved_training_activity, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}) %>
+	  </p>
+  </div>
+  <% end %>
+  
+  <p>
+    <%= f.label :other_income, "Does your household have income from sources other than employment?" %>
+	<%= link_to image_tag("Help_Icon.png", :size => "25x21", :alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "other_income_help"}, :popup => ['211NavigatorHelp', 'height=160,width=400']%>
+   	<%= f.collection_select(:other_income, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  
+  <%= observe_field "survey_other_income",
+		:url => {:action => "display_other_net_income_div"},
+		:with => "survey_other_income"
+  %> 
+  
+  <div id="other_net_income">    
+	  <p>
+	   <%= f.label :other_income_amt, "About that other income: how much is it? How often?" %>
+	   <%= f.text_field :other_income_amt, :maxlength=>12, :size=>8, :onkeypress=>"return checkFloat(this, event)" %>
+	   <%= f.collection_select(:other_income_frequency, @income_frequency, :annual_multiplier, :frequency, {:include_blank => '---Select One---'}) %>   
+	  </p>  
+  </div>
+  
+  <p>
+    <%= f.label :tax_filing_method_id, "How will you be filing your taxes this year?" %>
+	<%= f.collection_select(:tax_filing_method_id, @tax_filing_method, :id, :tax_method, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %> 
+  </p>
+  
+  <!-- Hidden fields -->
+  <%= f.hidden_field :age %>
+  <%= f.hidden_field :residency_id %>
+  <%= f.hidden_field :resident_of_CT %>
+  <%= f.hidden_field :have_a_spouse %>
+  
+  <%= f.hidden_field :children_under_18 %>
+  <%= f.hidden_field :children_under_13 %>
+  <%= f.hidden_field :children_under_5 %>
+  <%= f.hidden_field :adult_dependants %>
+  <%= f.hidden_field :adult_disability %>
+  <%= f.hidden_field :pregnant %>
+	
+  <%= link_to_remote image_tag("backFamilyInfo.jpg", :alt=>"Back to Family Information", :style=>"border: 0;", :mouseover => image_path("backFamilyInfoDn.jpg")),
+					 :update => "survey_questions", 
+					 :url => {:controller=>'surveys',
+							  :action => 'get_family_details', 
+					          :method => 'get'},
+					 :html=>{:class=>'active', :id=>"backFamInfo"},
+					 :submit => "frm_screening" %>
+  <%= link_to_remote image_tag("review.jpg", :alt=>"Review Answers", :style=>"border: 0;", :mouseover => image_path("reviewDn.jpg")),
+					 :update => "survey_questions", 
+					 :url => {:controller => 'surveys', 
+							   :action => 'get_survey_review', 
+							   :method => 'get'},
+					 :html=>{:class=>'active', :id=>"nextReview"},
+					 :submit => "frm_screening" %>
+
+<% end %>

@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Weekly:
+  frequency: "Weekly"
+  
+Biweekly:  
+  frequency: "Biweekly"
+  
+TwiceaMonth:  
+  frequency: "Twice a month"
+  
+Monthly:  
+  frequency: "Monthly"   
+  
+Annually:  
+  frequency: "Annually" 

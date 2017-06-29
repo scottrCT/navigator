@@ -1,0 +1,89 @@
+<%       
+render_tabnav :survey, 
+              :generate_css => false do 
+
+  add_tab do |t|
+    t.named 'Your Details'
+    t.titled 'Tell us about Yourself'
+	t.html = {:class=>'active', :id => 'self_info', :title=>'Answer questions about yourself'}
+    t.links_to_remote :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_self_details',							   
+							   :method => 'get'},
+					  :submit => 'frm_screening'
+  end 
+
+  add_tab do |t|
+    t.named 'Family Details'
+    t.titled 'Tell us about your Family'
+	t.html = {:id => 'family_info', :title=>'Answer questions about your family'}
+    t.links_to_remote :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_family_details', 
+							   :method => 'get'},
+					  :html=>{:class=>'active'},
+					  :submit => 'frm_screening'
+  end
+
+  add_tab do |t|
+    t.named 'Income Details'
+    t.titled 'Tell us about your income'
+	t.html = {:id => 'financial_info', :title=>'Answer questions about your income'}
+    t.links_to_remote :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_financial_details', 
+							   :method => 'get'},
+					  :html=>{:class=>'active'},
+					  :submit => 'frm_screening'
+  end 
+
+  add_tab do |t|
+    t.named 'Submit'
+    t.titled 'Review Your Answers'
+	t.html = {:id => 'review_response', :title=>'Review your responses and submit'}
+    t.links_to_remote :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_survey_review', 
+							   :method => 'get'},
+					  :html=>{:class=>'active'},
+					  :submit => 'frm_screening'
+  end 
+         
+  #add_tab do |t|
+  #  t.named 'Home'
+  #  t.titled 'Home Page'
+  #  t.links_to :controller => 'welcome'
+  #end 
+  #  
+  # you can use restful routes with:
+  #
+  #add_tab do |t|
+  #  t.named 'Users'
+  #  t.links_to hash_for_users_path
+  #end
+  #
+  #add_tab do |t|
+  #  t.named 'Customers'
+  #  t.links_to :controller => 'customers'
+  #end
+  #  
+  # # A tab can be initialized with a Hash like this:
+  # 
+  # add_tab :name => 'welcome', :link => {:controller=>'welcome'}
+  #
+  # # You can have a dynamic name or link 
+  # # (this partial is evaluated in the page context, so it sees every helper or instance variable)
+  #  
+  # add_tab do |t|
+  #   t.named "#{current_user} details"
+  #   t.links_to :controller => 'users', :action => 'show', :id => current_user.id
+  # end
+  #
+  # # You can have an image inside 
+  #
+  # add_tab do |t|
+  #   t.named image_tag('test')
+  #   t.links_to :controller => 'users', :action => 'show', :id => current_user.id
+  # end
+end 
+%>

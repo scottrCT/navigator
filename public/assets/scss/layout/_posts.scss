@@ -1,0 +1,62 @@
+// POSTS
+
+article {
+
+	margin:100px 0;
+
+	@include bp($tabletLarge) { margin: 50px 0; }
+	@include bp($handsetLarge) { margin: 40px 0; }
+
+	&.center {
+	//	@extend .squish3; not sure where this is coming from????
+		@include squish(3);
+		@include bp(max-width 1024px) {
+			@include squish(2);
+		}
+		@include bp(max-width 768px) {
+			@include squish(1);
+		}
+		@include bp(max-width 624px) {
+			@include squish(0);
+		}
+	}
+
+	header {
+
+		margin-bottom: 50px;
+
+		h1, h2 {
+			margin: 30px 0 40px 0;
+			a {
+				color: $darkGray;
+				@include hover() {
+					color: $blue;
+				}
+			}
+		}
+
+	}
+
+	ul, ol, blockquote {
+		line-height: 1.6em;
+	}
+
+	ul, ol {
+		li {
+			padding: 10px 0;
+		}
+	}
+
+	footer, footer.content {
+		margin-top: 80px;
+		margin-bottom: 80px;
+		@include clearfix;
+	}
+
+	.single &, .page & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.single-post & { margin-bottom: 0; }
+
+}

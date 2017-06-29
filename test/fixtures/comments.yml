@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visit_frequency: MyString
+  survey_for: MyString
+  specific_info: false
+  ease_of_use: MyString
+  useful: MyString
+  overall: MyString
+  comments: MyText
+  zip: MyString
+
+two:
+  visit_frequency: MyString
+  survey_for: MyString
+  specific_info: false
+  ease_of_use: MyString
+  useful: MyString
+  overall: MyString
+  comments: MyText
+  zip: MyString

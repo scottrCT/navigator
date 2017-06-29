@@ -1,0 +1,36 @@
+<h1>Survey Results</h1>
+<%
+if !@programs.empty?
+%>
+<h2 class="subheader">According to your answers, you may qualify for the following programs.
+Click on the program's name for its description, links to more information, and, when available, an electronic application.
+Click on more information for more detailed program eligibility requirements such as assest limits.
+<br /><br />Your feedback is important for us.&nbsp<%= link_to "Click here to fill out a satisfaction survey", :controller => "comments", :action => "new" %>
+</h2>
+<% end %>
+<div id="programsListed">
+	<ul>
+	<%
+		if @programs.empty?
+	%>
+		<div>According to our criteria, you do not qualify for any of the programs for which we screen.  Please dial 2-1-1 from any phone in CT to find out.</div>
+	<%else for program in @programs %>
+		<li>
+			<span name="<%= h program.name %>" onclick="javascript:$('<%= program.id %>').toggle()" class="programName"><%= h program.name %></span>
+			<br />
+			<div id="<%= program.id %>" style="display: none;">
+			<span class="programDesc"><%= h program.description %></span>
+			<% for link in program.program_links %>
+				<span class="programLink">
+					<%#= link_to "Click for #{link.name}", link.link, :target=>"_blank" %>
+					<%= link_to "Click for #{link.name}", {:controller=>"programs", :action=>"redirect", :id=>link.id, :survey=>@survey.id}, :target=>"_blank", :title=>"#{link.link}" %>
+				</span>
+			<% end %>
+			</div>
+		</li>
+	<% end %>
+	<% end %>
+	</ul>
+</div>
+
+

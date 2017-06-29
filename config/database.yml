@@ -1,0 +1,10 @@
+development:
+  adapter: mysql
+  database: navigator
+  pool: 5
+  timeout: 5000
+  username: rails
+  password: rails
+  encoding: utf8
+  reconnect: false
+  host: localhost

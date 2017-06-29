@@ -1,0 +1,187 @@
+<h1>According to your answers...</h1>
+<ul>
+	<%= flash[:notice] %>
+	<li><%=link_to_remote 'Your Details',
+                      :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_self_details',							   
+							   :method => 'get'},
+					  :submit => 'frm_screening'
+         %>&nbsp;&nbsp;<span class="bodysmall">(click to change)</span>
+		<ul>
+	<!-- Display Age -->
+	<% if !survey.age.blank? and survey.age > 0%>
+		<li>You are <%=h survey.age%> years old.</li>
+	<% end %>
+	
+	<!-- Display Residency Status -->
+	<% if !survey.residency_id.blank? %>
+		<% if survey.residency.status == "US Citizen" %>
+			<li>You are a US Citizen.</li>
+		<% elsif survey.residency.status == "US Resident" %>
+			<li>You are a Permanent Resident (you have a green card).</li>
+		<% elsif survey.residency.status == "Asylee/Refugee" %>
+			<li>You are a refugee, or an asylee in the US.</li>
+		<% elsif survey.residency.status == "Undocumented" %>
+			<li class="error">You are an undocumented alien. Keep in mind that most programs require citizenship, permanent residency, or asylee/refugee status.</li>
+		<% end %>
+	<% end %>
+	
+	<!-- Display Connecticut Residency -->
+	<% if !survey.resident_of_CT.nil? %>
+		<% if survey.resident_of_CT == 1 %> 
+			<li>You live in Connecticut.</li>
+		<% else %>
+			<li class="error">You do not live in Connecticut. We will only 
+                check whether you qualify for the Federal Assistance Programs</li>		
+		<% end %>
+	<% end %>
+	
+	<!-- Display have a spouse or not. -->
+	<% if !survey.have_a_spouse.nil? %>
+		<% if survey.have_a_spouse == 1 %>
+			<li>You have a spouse or partner living with you.</li>
+		<% else %>
+			<li>You do not have a spouse or partner living with you.</li>
+		<% end %>
+	<% end %>
+	</ul></li>
+	<li><%=link_to_remote 'Family Details',
+                      :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_family_details',							   
+							   :method => 'get'},
+					  :submit => 'frm_screening'
+         %>&nbsp;&nbsp;<span class="bodysmall">(click to change)</span>
+		<ul>
+	<!-- Display childern under 18 and how many of them are under 5 or 13. -->	
+	<% if !survey.children_under_18.blank? and survey.children_under_18 >= 0 %>
+		<% if survey.children_under_18 == 0%>
+			<li>You have no children.</li>
+		<% elsif survey.children_under_18 == 1%>
+			<li>There is 1 child living with you, </li>
+			<% if survey.children_under_5 == 1 %>
+				and he/she is less than 5 years old.</li>
+			<% else %>	
+				<% if survey.children_under_13 == 1 %>
+					and he/she is less than 13 years old.</li>
+				<% else %>
+					 and he/she is older than 13.</li>
+				<% end %>
+			<% end %>
+		<% elsif survey.children_under_18 > 1 %>
+			<li>You have <%= survey.children_under_18 %> children living with you,</li>
+			<% if survey.children_under_5 == 1 %>
+				and at least one of them is less than 5 years old.</li>
+			<% elsif survey.children_under_13 == 1 %>
+				 and at least one of them is under 13 years old.</li>
+			<% else %>
+				and all of them are 13-or-older.</li>
+			<% end %>
+		<% end %>
+	<% end %>
+	
+	<!-- Display adult dependants. -->	
+	<% if !survey.adult_dependants.blank? %>
+		<% if survey.adult_dependants.to_i == 0 %>
+			<li>No other dependent adults live there.</li>
+		<% elsif survey.adult_dependants.to_i == 1 %>
+			<li>There is one other dependent adult living there.</li>
+		<% else %>
+			<li>There are <%= survey.adult_dependants %> other dependent adults living there.</li>
+		<% end %>
+	<% end %>
+
+	<!-- Display adult disability. -->	
+	<% if !survey.adult_disability.nil? %>
+		<% if survey.adult_disability.to_i == 1 %>
+			<li>You or someone in your house has a disability.</li>
+		<% else %>	
+			<li>No family member has a disability.</li>
+		<% end %>
+	<% end %>
+	
+	<!-- Display pregnancy information. -->	
+	<% if !survey.pregnant.nil? %>
+		<% if survey.pregnant.to_i == 1 %>
+			<li>You or someone in your house is pregnant, or has been pregnant in the last twelve months.</li>
+		<% else %>	
+			<li>No one is pregnant nor has been in the last twelve months.</li>
+		<% end %>
+	<% end %>
+	</ul></li>
+	<li><%=link_to_remote 'Income Details',
+                      :update => 'survey_questions',
+					  :url => {:controller => 'surveys', 
+							   :action => 'get_financial_details',							   
+							   :method => 'get'},
+					  :submit => 'frm_screening'
+         %>&nbsp;&nbsp;<span class="bodysmall">(click to change)</span>
+		<ul>
+	<!-- Display if the person is employed along with income datails. -->	
+	<% if !survey.currently_employed.nil? %>
+		<% if survey.currently_employed.to_i == 1 %>
+			<li>You are employed.
+			<% if !survey.net_income_amt.blank? %>
+				 You make <%= number_to_currency(survey.net_income_amt.to_s.gsub(/[$,]/, "")) %> on a
+				 <% if !survey.net_income_frequency.blank? %>
+				 	<%= survey.net_income_frequency %> basis.</li>
+				 <% end %>
+			<% end %>
+		<% else %>	
+			<li>You are currently not employed.
+			<% if !survey.approved_training_activity.nil? and survey.approved_training_activity.to_i == 1 %>
+				But you are getting training, which is great.</li>
+			<% else %>
+				Nor are you participating in a training activity.</li>
+			<% end %>
+		<% end %>
+	<% end %>
+
+	<!-- Display if the spouse is employed along with income details. -->		
+	<% if !survey.spouse_currently_employed.nil? %>
+		<% if survey.spouse_currently_employed.to_i == 1 %>
+			<li>Your spouse is employed.
+			<% if !survey.spouse_net_income_amt.blank? %>
+				 Your spouse makes <%= number_to_currency(survey.spouse_net_income_amt.to_s.gsub(/[$,]/, "")) %> on a
+		 		 <% if !survey.net_income_frequency.blank? %>
+			 		<%= survey.net_income_frequency %> basis.</li>
+				 <% end %>
+			<% end %>
+		<% else %>	
+			<li>Your spouse is not employed.
+			<% if !survey.spouse_approved_training_activity.nil? and survey.spouse_approved_training_activity.to_i == 1 %>
+				But she/he is getting training.</li>
+			<% else %>
+				Nor is she/he taking part in a training activity.</li>
+			<% end %>
+		<% end %>
+	<% end %>
+
+	<!-- Display if the person has other income along with amount details. -->	
+	<% if !survey.other_income.blank? %>
+		<% if survey.other_income.to_i == 1 %>
+			<li> You have other income in the amount of 
+			<% if !survey.other_income_amt.blank? and survey.other_income_amt.to_i > 0 %>
+				 <%= number_to_currency(survey.other_income_amt.to_s.gsub(/[$,]/, "")) %> on a
+				 <% if !survey.other_income_frequency.blank? %>
+					<%= survey.other_income_frequency %> basis.</li>
+				 <% end %>
+			<% end %>
+		<% else %>
+			<li>You don't have any income from other sources.</li>
+		<% end %>
+	<% end %>
+			
+	<!-- Display tax filing information. -->						
+	<% if !survey.tax_filing_method_id.blank? and survey.residency.status != "Undocumented" %>
+		<% if survey.tax_filing_method.tax_method == "I will not file" %>
+			<li>You will not be filing an income tax return this year.</li>
+		<% elsif survey.tax_filing_method.tax_method == "Single" %>
+			<li>You will be filing your taxes by yourself.</li>
+		<% else %>
+			<li>You will be filing your taxes with your spouse.</li>
+		<% end %>
+	<% end %>
+	</ul></li>
+</ul>

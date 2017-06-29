@@ -1,0 +1,34 @@
+<h1 class="header">Welcome to the 2-1-1 Navigator</h1>
+<div class="mainContentArea">
+<div id="links">
+	<ul>
+		<li><%= image_tag("related.gif", :alt=>"Related Links")%></li>
+		<li><a title="The United Way of Connecticut Home Page" href="http://www.ctunitedway.org" target="_blank">United Way of CT</a></li>
+		<li><a title="Your Local United Ways" href="http://www.ctunitedway.org/Who/CTUWays.asp" target="_blank">Local United Ways</a></li>
+		<li><a href="http://www.211ct.org" title="Need any kind of help? Dial 2-1-1!" target="_blank">211</a></li>
+		<li><a href="http://www.211childcare.org" title="211 Child Care" target="_blank">211 Child Care</a></li>
+		<li><a href="http://www.ctcare4kids.com" title="Connecticut DSS Care 4 Kids" target="_blank">CT Care 4 Kids</a></li>
+	</ul>
+</div>
+<div>
+	<span id="navlogo">
+		<%= link_to(image_tag("211NavLogo.jpg", :alt=>"Go to the Benefits Survey", :title=>"Click to go to the benefits survey"), :controller => 'surveys', :action => 'start_new_survey')  %>
+		<br />
+		Click the logo to begin<br />the benefits survey
+		<br />
+	</span>
+</div>
+<div>
+Think of the benefits survey as an interactive interview. First we ask some basic information. Next, we ask some more questions based on your first answers. Try it. You'll be surprised at how easy it is.
+<br /><br />
+Once you are done, we will tell you which federal and state assistance programs you may qualify for, and how to apply for them. The 2-1-1 Navigator can't promise you will qualify, but it can tell you if it's worth your time to apply.
+<br /><br />
+Don't worry about your privacy. We don't ask for your name or address.
+<br /><br /><br />
+<span style="font-size: 90%">
+	We need your feedback on this website.<br />
+	Your comments will shape future updates.<br />
+	<%= link_to "Click here to fill out a satisfaction survey", :controller => "comments", :action => "new" %>
+</span>
+</div>
+</div>

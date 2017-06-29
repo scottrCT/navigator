@@ -1,0 +1,19 @@
+body{
+  background-color: #c2cae0;
+}
+
+hr{
+	margin-top: -10px;
+}
+
+h2{
+	font-family: Verdana, Helvetica, sans-serif;
+}
+
+a p.content{
+	background-color: #ffffff;
+	padding: 5px 5px 5px 5px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+	margin-bottom: 20px;
+}

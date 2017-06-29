@@ -1,0 +1,236 @@
+body {
+	background: #FFFFFF;
+	font-family: Georgia, serif;
+}
+
+.bodysmall {
+	font-size: 10px;
+	text-decoration: none;
+}
+
+#header {
+	height: 57px;
+}
+
+#header img {
+	border: none;
+}
+
+.leftHead {
+	float: left;
+	vertical-align: baseline;
+	clear: left;
+}
+
+.rightHead {
+	float: right;
+	vertical-align: baseline;
+	clear: right;
+	/* 
+	 * 5/16 of an inch since the box on the right side of the logo is 5/8 of an inch (the box with the hand)
+	 * The brand identity guide says the logo should be placed half a box away from the right side of the app
+	 * */
+	padding-right: .3125in;
+}
+
+.header {
+	font-weight: normal; 
+	color: #14243c;
+	width: 510px; 
+	font-size: 150%; 
+	margin: -5px 10px 15px 10px; 
+	padding: 3px; 
+	border-bottom: 1px solid;
+	text-align:left;
+}
+
+.subheader{
+	font-weight: normal; 
+	color: #14243c;
+	width: 100%; 
+	font-size: 90%; 
+	margin: 0px 10px 15px 20px; 
+	padding: 3px; 
+}
+
+.mainContentArea {
+	background-color: white;
+	text-align: center;
+	width: 95%;
+	padding: 20px;
+}
+
+.mainContentArea img {
+	border: none;
+}
+
+#navlogo {
+	float: left; 
+	font-size: 12px; 
+	color: darkblue; 
+	height: 260px;
+	margin-right: 15px;
+}
+
+#links {
+	float: right;
+	clear: right;
+	text-align: left;
+	height: 260px;
+}
+
+#links ul {
+	margin: 0 15px 15px 15px; 
+	padding: 5px 0 0 5px; 
+	list-style: none; 
+}
+
+#links li a {
+	background: url(/images/link.gif) no-repeat; 
+	margin-top: 2px; 
+	padding: 0 2px 3px 19px; 
+	display: block; 
+	color: #14243c;
+}
+
+#programsListed {
+	background-color: white;
+	width: 95%;
+	padding: 20px;
+}
+
+#programsListed ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#programsListed li {
+	padding-bottom: 10px;
+	background-image: url('/images/bullet.gif');
+	background-repeat: no-repeat;
+	background-position: 5px 10px;
+	padding-left: 14px; 
+}
+
+.programName {
+	font-weight: normal; 
+	color: #14243c;
+	font-size: 18px; 
+	margin: -5px 10px 15px 10px; 
+	padding: 3px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.programDesc {
+	font-weight: normal; 
+	color: #14243c;
+	font-size: 100%; 
+	margin:  0px 10px 5px 20px; 
+	padding-top: 5px;
+	display: block;
+	text-decoration: none;
+}
+
+.programLink {
+	font-weight: normal; 
+	color: #14243c;
+	font-size: 90%; 
+	margin:  0px 10px 0px 20px; 
+	display: block;
+}
+
+#footer {
+	text-align: center; 
+	height: 150px;
+	width: 95%;
+	clear: both;
+	float: left;
+	font-size: 10px;
+	display: block;
+	margin-top: 25px;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+#feedback {
+	/*background-image: url(/images/feedback.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 500px;
+	height: 75px;*/
+	margin: 0 auto;
+	background: white;
+	font-size: 10pt;
+}
+
+#feedback .questions {
+	border-bottom: solid 1px black;
+	width: 610px;
+	margin: 5px 5px 5px 25px;
+	padding: 5px 5px 5px 5px;
+}
+
+#feedback .questions .q {
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	width: 270px;
+}
+
+#feedback .questions .a {
+	margin: 0 0 0 290px;
+	padding: 0;
+}
+
+#feedback .submitBtn {
+	margin-left: 315px;
+}
+
+div#survey_tabnav_content img.help {
+	padding: 0 5px 0 5px;
+	vertical-align: bottom;
+}
+/* Error Reporting Styles - Start */ 
+.fieldWithErrors { 
+  margin: 2px; 
+  padding: 2px; 
+  background-color: red; 
+  display: table; 
+} 
+
+#errorExplanation { 
+  border: 2px solid red; 
+  margin: 0 54em 0 1em;
+  padding: 7px; 
+  padding-bottom: 0px; 
+  margin-bottom: 10px; 
+  background-color: #c2cae0 /*#f0f0f0; */
+} 
+
+#errorExplanation h2 { 
+  text-align: left; 
+  font-weight: bold; 
+  padding: 5px 5px 5px 15px; 
+  font-size: 10pt; 
+  margin: -7px; 
+  background-color: #c00; 
+  color: #fff; 
+} 
+
+#errorExplanation p { 
+  color: #333; 
+  margin-bottom: -15px; 
+  padding: 5px; 
+} 
+
+#errorExplanation ul li { 
+  font-size: 10pt; 
+  list-style: square; 
+} 
+/* Error Reporting Styles - End */

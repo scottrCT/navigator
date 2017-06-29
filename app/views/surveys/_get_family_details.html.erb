@@ -1,0 +1,80 @@
+<% fields_for @survey do |f|%>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :children_under_18, "How many children (18 and under) live in your house?" %>
+    <%= f.text_field :children_under_18, :maxlength=>2, :size=>2, :onkeypress=>"return checkNumber(this, event)", :onchange => "needToConfirm=true" %>
+  </p>
+  
+  <%= observe_field "survey_children_under_18",
+		:url => {:action => "display_children_under_5_div"},
+		:with => "survey_children_under_18"
+  %> 
+  
+  <div id="children_under_5">
+  <p>
+    <%= f.label :children_under_5, "Are any of the children living with you under 5 years old?" %>
+    <%= f.collection_select(:children_under_5, @dropdown_options, :id, :list_option, :include_blank => true) %>
+  </p>
+  <%= observe_field "survey_children_under_5",
+		:url => {:action => "display_children_under_13_div"},
+		:with => "survey_children_under_5"
+  %> 
+  </div>
+  <div id="children_under_13">
+  <p>
+    <%= f.label :children_under_13, "Are any of the children living with you under 13 years old?" %>
+    <%= f.collection_select(:children_under_13, @dropdown_options, :id, :list_option, :include_blank => true) %>
+  </p>
+  </div>  
+
+  <p>
+    <%= f.label :adult_dependants, "Besides your spouse/partner, how many adults living with you do you claim as dependents on your tax return?" %>
+    <%= f.text_field :adult_dependants, :maxlength=>2, :size=>2, :onkeypress=>"return checkNumber(this, event)", :onchange => "needToConfirm=true" %>
+  </p> 
+ 
+  <p>
+    <%= f.label :adult_disability, "Do you, or any adult living with you have any kind of disability?"  %>
+	<%= link_to image_tag("Help_Icon.png", :size => "25x21",:alt => "Help", :title => "Help", :class => "help", :border=>0), {:controller => "surveys", :action => "help", :anchor => "disability_help"}, :popup => ['211NavigatorHelp', 'height=170,width=400']%>
+    <%= f.collection_select(:adult_disability, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  <p>
+    <%= f.label :pregnant, "Is anyone in your household currently pregnant or was pregnant in last 12 months?"%>
+    <%= f.collection_select(:pregnant, @dropdown_options, :id, :list_option, {:include_blank => '---Select One---'}, html_options = {:onchange => "needToConfirm=true"}) %>
+  </p>
+  
+  <!-- Hidden fields -->
+  <%= f.hidden_field :age %>
+  <%= f.hidden_field :residency_id %>
+  <%= f.hidden_field :resident_of_CT %>
+  <%= f.hidden_field :have_a_spouse %>
+  
+    <%= f.hidden_field :currently_employed %>
+    <%= f.hidden_field :spouse_currently_employed %>
+    <%= f.hidden_field :other_income %>
+    <%= f.hidden_field :tax_filing_method_id %>
+    <%= f.hidden_field :approved_training_activity %>
+    <%= f.hidden_field :spouse_approved_training_activity %>
+    <%= f.hidden_field :net_income_amt %>
+    <%= f.hidden_field :net_income_frequency %>	
+    <%= f.hidden_field :spouse_net_income_amt %>
+    <%= f.hidden_field :spouse_net_income_frequency %>		
+    <%= f.hidden_field :other_income_amt %>	
+    <%= f.hidden_field :other_income_frequency %>
+  
+  
+  <%= link_to_remote image_tag("backYourInfo.jpg", :alt=>"Back to Your Information", :style=>"border: 0;", :mouseover => image_path("backYourInfoDn.jpg")),
+					 :update => "survey_questions", 
+					 :url => {:controller=>'surveys',
+							  :action => 'get_self_details', 
+					          :method => 'get'},
+					 :html=>{:class=>'active', :id=>'backSelfInfo'},
+					 :submit => "frm_screening" %>
+  <%= link_to_remote image_tag("nextIncome.jpg", :alt=>"Next: Income Information", :style=>"border: 0;", :mouseover => image_path("nextIncomeDn.jpg")),
+					 :update => "survey_questions", 
+					 :url => {:controller=>'surveys',
+							  :action => 'get_financial_details', 
+					          :method => 'get'},
+					 :html=>{:class=>'active', :id=>'nextIncInfo'},
+					 :submit => "frm_screening" %>
+<% end %>

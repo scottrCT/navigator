@@ -1,0 +1,103 @@
+<h1 class="header">Send Feedback</h1>
+<div id="feedback">
+<br />	
+<% remote_form_for(@comment, :update=>"main_tabnav_content", :url=>{:controller => "comments", :action => "create"}) do |f| %>
+	
+	<div id="visit" class="questions">
+		<div class="q">
+			<%= f.label :visit_frequency, "How many times have you visited the 2-1-1 Navigator?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :visit_frequency, "once" %><%= f.label :visit_frequency_once, "This is my 1st time" %><br />
+			<%= f.radio_button :visit_frequency, "twice" %><%= f.label :visit_frequency_twice, "Twice" %><br />
+			<%= f.radio_button :visit_frequency, "three_times" %><%= f.label :visit_frequency_three_times, "Three times" %><br />
+			<%= f.radio_button :visit_frequency, "more_than_three" %><%= f.label :visit_frequency_more_than_three, "More than three" %><br />
+		</div>
+	</div>
+	
+	<div id="subject" class="questions">
+		<div class="q">
+			<%= f.label :survey_for, "Were you completing the Questionnaire for yourself, or for someone else?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :survey_for, "myself" %><%= f.label :survey_for_myself, "For Myself" %><br />
+			<%= f.radio_button :survey_for, "other" %><%= f.label :survey_for_other, "For Someone Else" %><br />
+		</div>
+	</div>
+	
+	<div id="info" class="questions">
+		<div class="q">
+			<%= f.label :specific_info, "Were you looking for specific information?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :specific_info, "yes" %><%= f.label :specific_info_yes, "Yes" %><br />
+			<%= f.radio_button :specific_info, "no" %><%= f.label :specific_info_no, "No, just taking a look" %><br />
+		</div>
+	</div>
+	
+	<div id="use" class="questions">
+		<div class="q">
+			<%= f.label :ease_of_use, "How friendly, and easy to use do you think the site is?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :ease_of_use, "very_easy" %><%= f.label :ease_of_use_very_easy, "Very Easy" %><br />
+			<%= f.radio_button :ease_of_use, "somewhat_easy" %><%= f.label :ease_of_use_somewhat_easy, "Somewhat Easy" %><br />
+			<%= f.radio_button :ease_of_use, "about_average" %><%= f.label :ease_of_use_about_average, "About Average" %><br />
+			<%= f.radio_button :ease_of_use, "hard" %><%= f.label :ease_of_use_hard, "Hard" %><br />
+			<%= f.radio_button :ease_of_use, "unusable" %><%= f.label :ease_of_use_unusable, "Unusable" %><br />
+		</div>
+	</div>
+	
+	<div id="useful" class="questions">
+		<div class="q">
+			<%= f.label :useful, "How useful did you find the site?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :useful, "very_useful" %><%= f.label :useful_very_useful, "Very Useful" %><br />
+			<%= f.radio_button :useful, "useful" %><%= f.label :useful_useful, "Useful" %><br />
+			<%= f.radio_button :useful, "not_useful" %><%= f.label :useful_not_useful, "Not Useful" %><br />
+		</div>
+	</div>
+	
+	<div id="overall" class="questions">
+		<div class="q">
+			<%= f.label :overall, "Overall, how would you rate the 2-1-1 Navigator site?" %>
+		</div>
+		<div class="a">
+		    <%= f.radio_button :overall, "excellent" %><%= f.label :overall_excellent, "Excellent" %><br />
+			<%= f.radio_button :overall, "pretty_good" %><%= f.label :overall_pretty_good, "Pretty Good" %><br />
+			<%= f.radio_button :overall, "ok" %><%= f.label :overall_ok, "Ok" %><br />
+			<%= f.radio_button :overall, "room_for_improvement" %><%= f.label :overall_room_for_improvement, "There is room for improvement" %><br />
+			<%= f.radio_button :overall, "poor" %><%= f.label :overall_poor, "Poor" %><br />
+		</div>
+	</div>
+	
+	<div id="other" class="questions">
+		<div class="q">
+			<%= f.label :comments, "Do you have any additional suggestions, or comments?" %>
+		</div>
+		<div class="a">
+		    <%= f.text_area :comments, :size=>"25x4" %><br />
+		</div>
+	</div>
+	
+	<div id="zip" class="questions">
+		<div class="q">
+			<%= f.label :zip, "What is your zip code?" %>
+		</div>
+		<div class="a">
+		    <%= f.text_field :zip, :maxlength=>5, :size=>5 %><br />
+		</div>
+	</div>
+	<div id="captcha" class="questions">
+		<div class="q">
+			<label>Please type the two words in the box provided.  If you can not see the words, hit the refresh button (the circle of arrows) to the right of the input box.  You may also use the audio verification by clicking on the speaker icon.</label>
+		</div>
+		<div class="a">
+			<%= recaptcha_tags :ajax=>true, :id=>"recaptcha", :display => {:theme=>'blackglass', :tabindex=>4} %>
+		</div>
+	</div>
+    <%= submit_tag "Submit Feedback", :onclick=>"if (document.getElementById('comment_comments').value!=''){ return confirm('Please note that this form is for feedback purposes only.  If you are looking for help, please dial 2-1-1 from anywhere in CT.  The call is free.');}", :class=>"submitBtn" %>
+	<%= f.error_messages %>
+<% end %>
+</div>

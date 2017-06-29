@@ -1,0 +1,317 @@
+<!doctype html>
+
+<!--
+	HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
+	Free to use
+-->
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
+	<title>211 Navigator</title>
+
+	<meta name="author" content="211 Navigator United Way of Connecticut" />
+
+	<!-- Set Keywords & Description -->
+	<meta name="keywords" content="211 Navigator United Way of Connecticut" />
+	<meta name="description" content="Online Benefits Screener to tell you which federal and state assistance programs you may qualify for, and how to apply for them" />
+
+	<!-- Who owns the content of this site? -->
+	<meta name="Copyright" content="United Way of Connecticut" />
+
+	<!-- Open graph tags heavily used for social media previews -->
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+
+	<!-- Don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="google-site-verification" content="" />
+
+	<!-- Set Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net & https://github.com/audreyr/favicon-cheat-sheet -->
+	<link rel="shortcut icon" href="/assets/img/misc/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/assets/img/misc/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/misc/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/misc/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/misc/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/misc/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/misc/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/misc/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/misc/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/misc/apple-touch-icon-180x180.png" />
+
+	<!-- Include Stylesheets -->
+   <%=  javascript_include_tag :all %>
+  <%= stylesheet_link_tag :all %>
+<!--	<script src="../../../javascripts/prototype.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/effects.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/dragdrop.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/controls.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/widgets/tooltip.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/application.js?1395439289" type="text/javascript"></script>
+	<script src="../../../javascripts/checkTab.js" type="text/javascript"></script>
+	<script src="../../../javascripts/checkKey.js?1395439289" type="text/javascript"></script>
+	<link href="../../../stylesheets/errors_display.css?1395439289" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../stylesheets/main_tab.css?1395439289" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../javascripts/warn_user.js?1395439289" type="text/javascript"></script>
+-->
+
+	<link rel="stylesheet" href="/assets/css/site.main.css" />
+
+
+
+
+</head>
+
+<body>
+
+<div class="viewport">
+
+	<header>
+		<div class="logo"><a href="index.html"><img src="/assets/img/compass.svg"/>2-1-1 Navigator</a></div>
+		<nav>
+			<ul>
+				<li><a href="screener.html.erb">Benefits Screener</a></li>
+				<li><a href="../layouts/results.html.erb">The Programs</a></li>
+				<li><a href="tel:18002031234">Dial 2-1-1</a></li>
+				<li class="hideTablet"><a href="https://www.211ct.org/"><img src="/assets/img/211logo.png"/></a></li>
+			</ul>
+			<div class="hamburger" id="trigger">
+	         <span></span>
+	         <span></span>
+	         <span></span>
+	       </div>
+
+       
+		</nav>
+	</header>
+
+
+<section class="screener">
+	<div class="container">
+
+	<div class="span8 pre2 post2 text-center">
+		<img src="/assets/img/compass-gray.jpg" class="compasstitle"/>
+		<h2>Online Benefits Screener</h2>
+
+	
+		
+			<form action="/surveys/create" class="new_survey" id="new_survey" method="post" onsubmit="needToConfirm=false; new Ajax.Updater('frm_screening', '/surveys/create', {asynchronous:true, evalScripts:true, onFailure:function(request){survey_errors}, onSuccess:function(request){survey_errors}, parameters:Form.serialize(this)}); return false;"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="O6h371TiV4EKWPZpUuB4/Pmd1ZUHpxEENFCNPUS/L2I=" /></div>
+	  
+					<div class="survey_tabnav" id="survey_tabnav">
+
+						<div class="progress-wrap progress" data-progress-percent="25">
+						  	<div class="progress-bar progress"></div>
+						</div>
+						<ul>
+							<li class="active">Your Details</a></li>
+							<li class="" >Family Details</a></li>
+							<li class="">Income Details</a></li>
+							<li class="">Submit</a></li>
+						</ul>
+
+					</div>
+
+			<div class="survey_tabnav_content" id="survey_tabnav_content"> 
+				<div id="survey_errors"> 	
+					
+				</div>	
+			
+				<div id="survey_questions">
+							
+			  
+			 
+				  <p>
+				  	<span class="number">1</span>
+				    <label for="survey_resident_of_CT">Do you live in Connecticut?</label>
+				    <select id="survey_resident_of_CT" name="survey[resident_of_CT]" onchange="needToConfirm=true"><option value="">---Select One---</option>
+					<option value="0">No</option>
+					<option value="1">Yes</option></select>
+				  </p> 
+				  <script type="text/javascript">
+				//<![CDATA[
+				new Form.Element.EventObserver('survey_resident_of_CT', function(element, value) {new Ajax.Request('/surveys/alert_user', {asynchronous:true, evalScripts:true, parameters:'survey_resident_of_CT=' + encodeURIComponent(value) + '&authenticity_token=' + encodeURIComponent('O6h371TiV4EKWPZpUuB4/Pmd1ZUHpxEENFCNPUS/L2I=')})})
+				//]]>
+				</script>  
+				  <p>
+				  	<span class="number">2</span>
+				    <label for="survey_age">How old are you?</label>
+				    <input id="survey_age" maxlength="3" name="survey[age]" onchange="needToConfirm=true" onkeypress="return checkNumber(this, event)" size="3" type="text" />
+				  </p>
+				  <p>
+				  	<span class="number">3</span>
+				    <label for="survey_residency_id">What is your residency status?</label>
+				    <select id="survey_residency_id" name="survey[residency_id]" onchange="needToConfirm=true"><option value="">---Select One---</option>
+				<option value="1">US Citizen</option>
+				<option value="2">Permanent Resident</option>
+				<option value="3">Asylee/Refugee</option>
+				<option value="4">Other</option></select>
+				  </p>
+				  <p>
+				  	<span class="number">4</span>
+				    <label for="survey_have_a_spouse">Do you have a spouse or partner living with you?</label>
+				    <select id="survey_have_a_spouse" name="survey[have_a_spouse]" onchange="needToConfirm=true"><option value="">---Select One---</option>
+				<option value="0">No</option>
+				<option value="1">Yes</option></select>
+				  </p>
+			  <!-- Hidden fields -->
+				    <input id="survey_children_under_18" name="survey[children_under_18]" type="hidden" />
+				    <input id="survey_children_under_13" name="survey[children_under_13]" type="hidden" />
+				    <input id="survey_children_under_5" name="survey[children_under_5]" type="hidden" />
+				    <input id="survey_adult_dependants" name="survey[adult_dependants]" type="hidden" />
+				    <input id="survey_adult_disability" name="survey[adult_disability]" type="hidden" />
+				    <input id="survey_pregnant" name="survey[pregnant]" type="hidden" />
+
+				    <input id="survey_currently_employed" name="survey[currently_employed]" type="hidden" />
+				    <input id="survey_spouse_currently_employed" name="survey[spouse_currently_employed]" type="hidden" />
+				    <input id="survey_other_income" name="survey[other_income]" type="hidden" />
+				    <input id="survey_tax_filing_method_id" name="survey[tax_filing_method_id]" type="hidden" />
+				    <input id="survey_approved_training_activity" name="survey[approved_training_activity]" type="hidden" />
+				    <input id="survey_spouse_approved_training_activity" name="survey[spouse_approved_training_activity]" type="hidden" />
+				    <input id="survey_net_income_amt" name="survey[net_income_amt]" type="hidden" />
+				    <input id="survey_net_income_frequency" name="survey[net_income_frequency]" type="hidden" />	
+				    <input id="survey_spouse_net_income_amt" name="survey[spouse_net_income_amt]" type="hidden" />
+				    <input id="survey_spouse_net_income_frequency" name="survey[spouse_net_income_frequency]" type="hidden" />		
+				    <input id="survey_other_income_amt" name="survey[other_income_amt]" type="hidden" />	
+				    <input id="survey_other_income_frequency" name="survey[other_income_frequency]" type="hidden" />
+				     <p>
+				  		<a class="buttonLink button next" href="#" id="nextFamLink" onclick="new Ajax.Updater('survey_questions', '/surveys/get_family_details?method=get', {asynchronous:true, evalScripts:true, parameters:Form.serialize('frm_screening') + '&amp;authenticity_token=' + encodeURIComponent('O6h371TiV4EKWPZpUuB4/Pmd1ZUHpxEENFCNPUS/L2I=')}); return false;">Next</a>
+					</p>
+
+							  
+				</div>
+			</div>
+		</form>
+
+
+
+	</div>
+	</div>
+</section>
+<section class="prefooter">
+	<div class="span12 text-center">
+		<p>Any questions? Dial 2-1-1 from anywhere in the State of Connecticut. The call is free. </p>
+	</div>
+</section>
+
+<footer>
+			
+	<div class="container">
+
+		<div class="menu-footer-menu-container">
+
+			<ul id="menu-footer-menu" class="menu">
+				<li><a href="http://uwc.211ct.org/about/">About 2-1-1</a>
+					<ul class="sub-menu">
+						<li><a href="http://uwc.211ct.org/about/">General Info</a></li>
+						<li><a href="http://www.ctunitedway.org/jobs.asp">Job Postings</a></li>
+						<li><a href="http://visitor.r20.constantcontact.com/manage/optin?v=001KWySq_ntCSchOKQKQlmX3ujt7tc4o2Z4KvOE01nU3uYjXJdcRo95AYTkWB75TKFncNQkjtYQeAk6HFBM_z4alz1PeITvpvIczBxzoe-DniYaKKF66_DTY2xdKDS_wMYnE7MKWwsjpWjFP4Ym8O7PoIErXu1l_ht2hbmukQP5iQM%3D">Newsletter</a></li>
+						<li><a href="http://uwc.211ct.org/about/privacypolicy/">Privacy Policy</a></li>
+					</ul>
+				</li>
+				<li><a href="http://www.211ct.org">Get Help</a>
+					<ul class="sub-menu">
+						<li><a href="http://www.211childcare.org/">2-1-1 Child Care</a></li>
+						<li><a href="">2-1-1 Navigator</a></li>
+						<li><a href="http://cdi.211ct.org">CDI</a></li>
+						<li><a href="http://www.cthcvp.org/">Section 8</a></li>
+						<li><a href="http://uwc.211ct.org/events/">Calendar</a></li>
+					</ul>
+				</li>
+				<li><a href="http://uwc.211ct.org/give-help/">Give Help</a>
+					<ul class="sub-menu">
+						<li><a href="http://uwc.211ct.org/give-help/civic-participation/">Civic Participation</a></li>
+					</ul>
+				</li>
+			<li><a href="http://uwc.211ct.org/professionals/">Professionals</a>
+			<ul class="sub-menu">
+				<li><a href="http://ct.211counts.org/">2-1-1 Counts</a></li>
+				<li><a href="http://uwc.211ct.org/professionals/directories/">Directories</a></li>
+				<li><a href="http://uwc.211ct.org/professionals/materials/">Materials</a></li>
+				<li><a href="http://uwc.211ct.org/professionals/reports/">Reports</a></li>
+			</ul>
+			</li>
+			<li><a href="http://uwc.211ct.org/contact/">Contact</a>
+				<ul class="sub-menu">
+					<li><a href="tel:2-1-1">Dial 2-1-1</a></li>
+					<li><a href="tel:1-800-203-1234">Or Dial 1-800-203-1234</a></li>
+					<li><a href="tel:1-800-671-0737">TTY: 1-800-671-0737</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+
+		<a href="https://www.facebook.com/211ct" target="new"><img src=" http://uwc.211ct.org/files/2015/07/icon-facebook.png" align="right" alt="Facebook"/></a>
+
+		<a href="https://twitter.com/211CT" target="new"><img src=" http://uwc.211ct.org/files/2015/07/icon-twitter.png" align="right" alt="Twitter"/></a>
+
+		<a href="https://www.youtube.com/user/ctunitedway" target="new"><img src=" http://uwc.211ct.org/files/2015/07/icon_Youtube1.png" align="right" alt="You Tube"/></a>
+
+		<a href="http://www.essentialaccessibility.com/" target="new"><img src=" http://uwc.211ct.org/files/2016/06/Essential_Accessibility.png" align="right" alt="Accessibility App"/></a>
+		
+		
+
+		<div class="line"></div>
+		
+		<p>2-1-1 is a program of United Way of Connecticut and is supported by the State of Connecticut and Connecticut United Ways.</p>
+		<img src="http://uwc.211ct.org/wp-content/themes/211/assets/img/logo-unitedway.png" align="right"/>
+
+
+	</div>
+
+	<span id="bruteprotect_uptime_check_string" style="display:none;">7ads6x98y</span>
+
+
+
+</footer><!-- end footer -->
+
+
+</div><!-- end .viewport -->
+
+<script src="/assets/js/lib/modernizr-2.6.2.min.js"></script>
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/assets/js/lib/jquery-1.11.1.min.js'>\x3C/script>")</script>
+
+<!-- Include Scripts -->
+<script src="/assets/js/site.js"></script>
+
+
+
+<!-- Asynchronous google analytics; this is the official snippet.
+	 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+-->
+
+</body>
+</html>

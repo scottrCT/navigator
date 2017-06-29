@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+valid_survey:
+  id: 1
+  age: 30
+  residency: USC
+  resident_of_CT: YES
+  have_a_spouse: YES
+  children_under_18: 1
+  adult_dependants: 0
+  children_under_13: nil
+  children_under_5: 1
+  adult_disability: NO
+  pregnant: YES
+  currently_employed: YES
+  spouse_currently_employed: YES
+  other_income: NO
+  tax_filing_method: Joint
+  approved_training_activity: nil
+  spouse_approved_training_activity: nil
+  net_income_amt: 80000
+  net_income_frequency: Annually
+  spouse_net_income_amt: 60000
+  spouse_net_income_frequency: Annually
+  other_income_amt: nil
+  other_income_frequency: nil
+ 

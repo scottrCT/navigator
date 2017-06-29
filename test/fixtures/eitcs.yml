@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: 1
+  filing_status: 1
+  children_no: 1
+  amount: 1
+
+two:
+  year: 1
+  filing_status: 1
+  children_no: 1
+  amount: 1

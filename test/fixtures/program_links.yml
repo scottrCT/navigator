@@ -1,0 +1,40 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+belongs_to :program
+  
+one:
+  id: 1
+  program_id: 1
+  name: "more info"
+  link: "http://www.infoline.org/InformationLibrary/Documents/Care%204%20Kids%20lb.asp"
+
+two:
+  id: 2
+  program_id: 1 
+  name: "an application"
+  link: "http://www.ctcare4kids.com/pdf/C4KfinalApplication2.pdf"
+
+three:  
+  id: 3
+  program_id: 2
+  name: "more Info"
+  link: "http://www.infoline.org/InformationLibrary/Documents/Earned%20Income%20Credit%20pt.asp"
+
+four:
+  id: 4  
+  program_id: 3
+  name: "more information"
+  link: "http://www.infoline.org/InformationLibrary/Documents/Food%20Stamps%20cw.asp"
+
+five:
+  id: 5  
+  program_id: 3
+  name: "an electronic application"
+  link: "http://www.ct.gov/dss/lib/dss/pdfs/w-1food.pdf"
+
+six:
+  id: 6  
+  program_id: 4
+  name: "more information"
+  link: "http://www.infoline.org/InformationLibrary/Documents/CT_Energy_Assist_Programs.asp"
+  

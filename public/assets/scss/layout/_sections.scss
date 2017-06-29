@@ -1,0 +1,406 @@
+// GENERAL LAYOUTS
+
+section {
+	display: block;
+	position:relative;
+	float:left;
+	width:100%;
+	padding:100px 0;
+
+	@include bp($small){
+		padding:30px 0px;
+	}
+
+}
+
+img.compasstitle {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 105px);
+    z-index: 1;
+
+    @include bp($small){
+    	top: 10px;
+		width:80px;
+		left: calc(50% - 40px);
+	}
+
+
+}
+
+
+
+.hero{
+	padding:150px 0px;
+	background:url(../img/hero.jpg);
+	background-size:cover;
+	background-position:center;
+	border-bottom:8px solid $yellow;
+
+	@include bp($small){
+		padding:80px 0px;
+	}
+
+
+
+	h1, h3{
+		color:white;
+	}
+
+	h1{
+		padding-bottom:40px;
+	}
+}
+
+
+.cta{
+	background:url(../img/texture.jpg);
+	background-size:cover;
+	background-position:center;
+	position:relative;
+	padding:20px 0px;
+
+	.button{
+		z-index:10;
+	}
+
+	.compassbg{
+		padding:100px 0px;
+		background:url(../img/compass-white.png) no-repeat;
+		width:100%;
+		background-position: center;
+		background-size:contain;
+	}
+}
+
+.prefooter{
+	padding:0px 0px 100px 0px;
+	background:url(../img/whitetopo.jpg);
+	background-position:center bottom;
+	background-size:cover;
+
+
+	
+}
+
+.screener{
+
+	h2{
+		position: relative;
+		margin-bottom:80px;
+		z-index:10;
+	}
+
+	.survey_tabnav{
+		margin:30px 0px;
+
+		ul{
+			list-style: none;
+			margin:20px 0px;
+			padding:0;
+			display: flex;
+			align-items:center;
+			justify-content: space-around;
+
+			li{
+				display: inline-block;
+				margin:0;
+				padding:0 10px;
+				color:$gray;
+
+				@include bp($small){
+					font-size:12px;
+				}
+
+				&.active{
+					color:$blue;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.progressbar{
+		width:100%;
+		height:10px;
+		border-radius:10px;
+		background:$lightYellow;
+
+
+	}
+
+
+	.progress {
+	  width: 100%;
+	  height: 10px;
+	  border-radius:10px;
+	}
+	.progress-wrap {
+	  background:$yellow;
+	  overflow: hidden;
+	  position: relative;
+
+	  .progress-bar {
+	    background: $lightYellow;
+	    left: 0;
+	    position: absolute;
+	    top: 0;
+	  }
+	}
+
+
+
+
+
+	.survey_tabnav_content{
+		background:$lightestBlue;
+		border-radius:15px;
+		width:100%;
+		padding:50px 100px;
+		position:relative;
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		flex-wrap:wrap;
+
+		@include bp($small){
+			flex-direction: column;
+			padding:20px;
+		}
+
+		#survey_errors, #survey_questions{
+			width:100%;
+		}
+
+		span.number{
+			font-weight: bold;
+			color:$blue;
+			border:2px solid $lightBlue;
+			border-radius: 50%;
+			padding:5px 12px 4px 12px;
+			margin-right:10px;
+
+			@include bp($tiny){
+				display: none;
+			}
+
+
+
+		}
+
+		select, input, textarea{
+			float:right;
+			padding:10px;
+			border-radius:5px;
+			border:1px solid rgba($lightBlue,0.5);
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background:white;
+			min-width:150px;
+
+			@include bp($tiny){
+				float:left;
+				display: block;
+			}
+
+		}
+
+
+		label{
+
+			width:350px;
+
+			@include bp($tiny){
+				width:auto;
+				float:left;
+				display: block;
+				padding:10px 0px;
+			}
+
+		}
+
+		select{
+			background: white url(../img/dropdown.png) no-repeat 97% 50% ;
+ 			background-size: 11px 11px;
+		}
+
+
+		p{
+			margin:50px 0px !important;
+			display: flex;
+    		align-items: center;
+    		justify-content: space-between;
+
+		}
+	}
+
+
+	form{
+
+		.buttonLink{
+
+			@include bp($tiny){
+				display: block;
+				float:left;
+				width:100%;
+				background:none;
+				color:$blue;
+				padding:20px 0px;
+				height:auto;
+				line-height: normal;
+			}
+
+
+			&.next{
+				float:right;
+
+				@include bp($tiny){
+					text-align:right;
+				}
+			}
+
+			&.next{
+
+			}
+		}
+	}
+}
+
+#programsListed{
+
+	text-align:left;
+	background:$lightestBlue;
+	border-radius:15px;
+	width:100%;
+	padding:0px;
+	position:relative;
+
+ul{
+	list-style:none;
+	padding:0;
+
+	 li{
+
+	 	padding:20px 50px 0px 50px;
+	 	border-bottom:2px solid $blue;
+	 	display: flex;
+	    align-items: flex-start;
+	    flex-direction: column;
+
+	    @include bp($small){
+	    	padding:20px 15px 0px 15px;
+	    }
+
+	    &:last-child{
+	    	border-bottom:none;
+	    }
+
+	 	span.programName{
+	 		color:$blue;
+	 		position:relative;
+	 		margin-left:55px;
+	 		display: flex;
+	    	align-items: flex-start;
+
+	    	@include bp($small){
+		    	margin-left:0px;
+		    }
+
+
+			&:before{
+			    content: "";
+			    position: absolute;
+			    background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+					 viewBox='0 0 191.2 191.2' style='enable-background:new 0 0 191.2 191.2;' xml:space='preserve'>
+					 <style type='text/css'>
+						.st0{fill:#629ad4;}
+						.st1{opacity:0.5;fill:#629ad4;enable-background:new    ;}
+					</style>
+					<g>
+						<path class='st0' d='M95.6,0C43,0,0,43,0,95.6s43,95.6,95.6,95.6s95.6-43,95.6-95.6S148.2,0,95.6,0z M95.6,180.3
+							c-46.6,0-84.7-38.1-84.7-84.7S49,10.9,95.6,10.9s84.7,38.1,84.7,84.7S142.2,180.3,95.6,180.3z'/>
+						<path class='st1' d='M67,114.3l-15.5,25.8l25.8-15.5l-1.8-8.1C75.5,116.4,67,114.3,67,114.3z M75.5,76.9l1.8-8.5L51.5,52.9L67,78.7
+							L75.5,76.9z M115.4,116.4l-2.1,8.1l25.4,15.5l-15.5-25.8C123.1,114.3,115.4,116.4,115.4,116.4z M123.1,78.7l15.5-25.8l-25.4,15.5
+							l2.1,8.5C115.4,76.9,123.1,78.7,123.1,78.7z'/>
+						<path class='st0' d='M109.7,81.9l-14.5-60l-14.5,60l-60,14.5l60,14.5l14.5,60l14.5-60l60-14.5L109.7,81.9z M95.3,103.7
+							c-4.2,0-7.4-3.2-7.4-7.4c0-4.2,3.2-7.4,7.4-7.4s7.4,3.2,7.4,7.4C102.3,100.6,99.1,103.7,95.3,103.7z'/>
+					</g>
+					</svg>") no-repeat;
+			        height: 40px;
+				    width: 40px;
+				    left:55px;
+				    margin-top: -6px;
+				    margin-right: 5px;
+
+				    margin-left:-115px;
+
+
+				     @include bp($small){
+				    	display: none;
+				    }
+
+
+			}
+		}
+
+
+		& > div{
+			width:100%;
+			display: block;
+			margin:0px 55px;
+			padding-bottom:50px;
+
+			 @include bp($small){
+		    	margin:0px;
+		    }
+
+
+			span.programDesc{
+				width:100%;
+				display: block;
+				padding-right:50px;
+				padding-bottom:20px;
+			}
+
+			span.programLink{
+				font-size: 14px;
+				color: white;
+				text-transform: uppercase;
+				height: 50px;
+				line-height: 50px;
+				font-weight: 600;
+				display: inline-block;
+				border-radius: 10px;
+				padding: 0 40px;
+				background: $lightBlue;
+				letter-spacing: 1px;
+				cursor: pointer;
+				margin-right:15px;
+
+				 @include bp($small){
+			    	margin:10px 0px;
+			    }
+
+
+
+				&:nth-child(3){
+					background:$yellow;
+				}
+
+				a{
+					color:white;
+				}
+
+
+			}
+
+
+
+		}
+
+		
+	}
+
+}
+
+}

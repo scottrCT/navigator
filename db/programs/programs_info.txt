@@ -1,0 +1,126 @@
+[care4kids]
+name: Connecticut Care 4 Kids
+description: Care 4 Kids helps pay for child care for low to moderate income families who are working or in job training.
+links: http://www.infoline.org/InformationLibrary/Documents/Care%204%20Kids%20lb.asp
+application: http://ctcare4kids.com/pdf/C4KfinalApplication2.pdf
+
+[eitc_credit]
+name: Earned Income Tax Credit
+description: The Earned Income Tax Credit (EITC) is a refundable federal tax benefit for working people with low or moderate incomes. Eligible families or individuals usually receive a tax refund after filing their tax return. 
+links: http://www.infoline.org/InformationLibrary/Documents/Earned%20Income%20Credit%20pt.asp
+
+[food_stamps]
+name: Food Stamps/SNAP
+description: The Food Stamp program helps low income households buy food.
+links: http://www.infoline.org/InformationLibrary/Documents/Food%20Stamps%20cw.asp
+more_links: http://www.infoline.org/focus/hunger.asp
+application: http://www.ct.gov/dss/lib/dss/pdfs/w-1food.pdf
+
+[saga_cash]
+name: SAGA Cash
+description: SAGA provides cash to individuals without dependent children in Connecticut who do not have enough money to meet their basic needs and are deemed "unemployable".
+links: http://www.infoline.org/InformationLibrary/Documents/SAGA%20Cash%20Assistance%20cw.asp
+
+[saga_medical]
+name: SAGA Medical
+description: SAGA provides medical insurance to indigent individuals regardless of their employability status.
+links: http://www.infoline.org/InformationLibrary/Documents/SAGA%20Cash%20Assistance%20cw.asp
+
+[huskya_children]
+name: Husky A: For Children
+description: HUSKY (Healthcare for UninSured Kids and Youth) is a managed care health insurance program for children ages 18 and under who are U.S. citizens or legal permanent residents.
+links: http://www.infoline.org/InformationLibrary/Documents/HUSKYAandHUSKYBcw.asp
+application: http://www.huskyhealth.com/hh/cwp/view.asp?a=3573&q=422288&hhNav=|
+
+[huskya_parents]
+name: Husky A: For Parents/Caregiver Relatives
+description: Parents and relative caregivers whose child is insured under HUSKY A and whose income is at or below 185% of the Federal Poverty Level may also be eligible for coverage by HUSKY A.
+links: http://www.infoline.org/InformationLibrary/Documents/HUSKYAandHUSKYBcw.asp
+application: http://www.huskyhealth.com/hh/cwp/view.asp?a=3573&q=422288&hhNav=|
+
+[huskyb]
+name: Husky B: For Children
+description: HUSKY (Healthcare for UninSured Kids and Youth) is a managed care health insurance program for uninsured children ages 18 and under who are U.S. citizens or legal permanent residents.
+links: http://www.infoline.org/InformationLibrary/Documents/HUSKYAandHUSKYBcw.asp
+application: http://www.huskyhealth.com/hh/cwp/view.asp?a=3573&q=422288&hhNav=|
+
+[medicaid]
+name: Medicaid
+description: Medicaid is a government health insurance program for people who are 65 years of age or older, blind or disabled, children, pregnant women and parents. 
+links: http://www.infoline.org/InformationLibrary/Documents/Medicaid%20cw.asp
+
+[medicaid_disabled]
+name: Medicaid for the Employed Disabled
+description: Connecticut residents who meet Social Security's definition of disability and are employed may be eligible for Medicaid even if their income and assets are higher than the usual income and asset restrictions for Medicaid.
+links: http://www.infoline.org/InformationLibrary/Documents/Medicaid%20for%20the%20Employed%20Disabled%20cw.asp
+
+[medicare_ab]
+name: Medicare
+description: Medicare is the federal health insurance program for people 65 years of age and older, and people with disabilities under the age of 65.
+links: http://www.infoline.org/InformationLibrary/Documents/Medicare%20cw.asp
+
+[medicare_d]
+name: Medicare D
+description: Medicare Part D, also known as Medicare Rx, is Medicare's prescription drug program. 
+links: http://www.infoline.org/InformationLibrary/Documents/Medicare%20cw.asp
+
+[medicare_d_lowincome]
+name: Medicare D Low Income Subsidy
+description: The Medicare D Low Income Subsidy, also called "Extra Help", helps low income individuals pay for Medicare Part D premiums, deductibles and co-pays.
+links: http://www.infoline.org/InformationLibrary/Documents/Prescription%20Expense%20Assistance%20cw.asp
+
+[conn_pace]
+name: ConnPACE
+description: ConnPACE pays for most prescription drugs for eligible senior citizens and people with disabilities.
+links: http://www.infoline.org/InformationLibrary/Documents/Prescription%20Expense%20Assistance%20cw.asp
+application: http://www.connpace.com/pubs/index.htm
+
+[rent_rebate]
+name: Property Tax Credit and Rent Rebate
+description: State law provides a property tax credit/rent rebate program for Connecticut homeowners and renters who are elderly or disabled, and whose incomes do not exceed certain limits. The benefit is based on a graduated income scale.
+links: http://www.infoline.org/InformationLibrary/Documents/PropertyTaxCreditforElderlyorDisabledpt.asp
+
+[social_security_disability]
+name: Social Security Disability - SSD
+description: SSD pays a monthly benefit to individuals who are unable to work because of their disability. To be eligible, the individual must have worked enough to earn the proper number of "credits" and have paid Social Security taxes.
+links: http://www.socialsecurity.gov/dibplan/index.htm
+
+[supplemental_security_income]
+name: Supplemental Security Income - SSI
+description: SSI pays a monthly benefit amount to low income individuals who are elderly or disabled and who have not earned enough work credits to be eligible for Social Security Retirement or Social Security Disability.
+links: http://www.socialsecurity.gov/notices/supplemental-security-income/
+
+[wic]
+name: WIC
+description: WIC provides specific foods and nutrition education to eligible pregnant women, postpartum women up to six months, breastfeeding women up to one year postpartum, and infants and children up to their fifth birthday.
+links: http://www.infoline.org/InformationLibrary/Documents/WIC%20cw.asp
+
+[utility_assistance]
+name: Utility Assistance - CEAP - CHAP
+description: CEAP and CHAP energy assistance programs provide financial assistance for payment of primary heat bills for households with qualifying incomes.  The amount of assistance depends upon household income and family size, type of heat source, and whether heat is included in rent.  CEAP has a renter's benefit for households whose heat is included in their rent, but CHAP does not.
+links: http://www.infoline.org/InformationLibrary/Documents/CT_Energy_Assist_Programs.asp
+
+[tfa]
+name: Temporary Family Assistance - TFA
+description: Monthly cash benefit for indigent families with dependent children.  Custodial relatives can receive a child-only TFA grant without regard to the custodial relative's income.
+links: http://www.infoline.org/InformationLibrary/Documents/Temporary_Family_Assistance_TFA.asp 
+
+[operation_fuel]
+name: Operation Fuel
+description: Operation Fuel provides cash assistance for payment of heat bill OR non-heat utility bills for qualifying households.
+links: http://www.infoline.org/InformationLibrary/Documents/Operation%20Fuel%20fj.asp 
+
+[lunch_breakfast]
+name: School Breakfast-School Lunch Program
+description: Free or reduced price breakfasts and lunches are served in participating elementary and secondary schools to enrolled students whose family income does not exceed income limits.
+links: http://www.infoline.org/InformationLibrary/Documents/School%20Lunch%20and%20Breakfast%20Programs.asp 
+
+[healthy_start]
+name: Healthy Start
+description: Healthy Start is an expanded Medicaid program that provides prenatal care and all other medical services for pregnant women whose income is at or below 250% of the federal poverty level. Note: There's no asset test. Also, take into consideration that a pregnant woman counts as a family of two for this program.
+links: http://www.infoline.org/InformationLibrary/Documents/HEALTHYSTART.asp 
+
+[medicare_savings]
+name: Medicare Savings Programs - QMB - SLMB - ALMB
+description: Medicare Savings Programs pay Medicare B premiums.  QMB also pays for Medicare B deductibles and co-pays.
+links: http://www.211ct.org/InformationLibrary/Documents/Medicaresavingsprograms.asp

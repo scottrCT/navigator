@@ -1,0 +1,33 @@
+.fieldWithoutErrors,
+.fieldWithErrors
+{
+    outline-width: 1px;
+    outline-color: white;
+    outline-style: solid;
+
+    /* !!HACK!! IE will not use this because it does not understand !important.  Border is not needed for firefox, so make it 0px!*/
+    border-width: 0px !important;    
+    /*for IE!*/
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.fieldWithErrors
+{
+	background: pink;
+	background-color:pink;
+    outline-color: red;
+    	    
+    /*for IE!*/
+    border-color: red;
+}
+
+/* Browser support may be limited here...*/
+.fieldWithErrors input,
+.fieldWithErrors select,
+.fieldWithErrors textarea
+{
+	background: pink;
+	background-color: pink;
+}

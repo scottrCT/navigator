@@ -1,0 +1,176 @@
+// SPECIFIC TO PROJECT
+
+.small {
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $lightGray;
+}
+
+.content {
+	max-width: 900px;
+	margin: auto;
+	text-align: left;
+}
+
+.close {
+	width: 40px;
+	height: 40px;
+	top: 30px;
+	right: 30px;
+	position: absolute;
+	cursor: pointer;
+	@include transition(all 0.2s ease-out);
+	@include hover() {
+		@include transform('scale(1.1)');
+		&:before, &:after {
+			background: $blue;
+		}
+	}
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		height: 1px;
+		left: 0;
+		right: 0;
+		background: $lightGray;
+		@include vertical-align();
+	}
+	&:before {
+		@include transform(rotate(45deg));
+	}
+	&:after {
+		@include transform(rotate(-45deg));
+	}
+	.navOpen & {
+		width: 30px; height: 30px;
+		top: 15px;
+		right: 15px;
+	}
+}
+
+
+.pagination {
+	display: table;
+	margin: 40px auto 80px auto;
+	ul {
+		display: table-row;
+		list-style: none;
+		padding: 0;
+		li {
+			display: table-cell;
+			padding:0 15px;
+		}
+	}
+	.dots {
+		color: #E1E1E1;
+	}
+}
+
+ul.table {
+	list-style: none;
+	margin: 0 auto 50px auto;
+	padding: 0;
+	display: table;
+	text-align: center;
+	li {
+		padding: 0 20px;
+		display: table-cell;
+		@extend .small;
+		a {
+			color: $lightGray;
+			@include hover() {
+				color: $blue;
+			}
+		}
+		&.on {
+			a { 
+//				font-weight: bold;
+				color: $blue;
+				@include hover() {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+.button, input[type="button"] {
+	font-size: 14px;
+	color: white;
+	text-transform: uppercase;
+	height: 50px;
+	line-height: 50px;
+	font-weight: 600;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 0 40px;
+	background: $yellow;
+	letter-spacing: 1px;
+	cursor: pointer;
+	@include transition(all 0.2s ease-out);
+	&:hover{
+			color: white;
+			background: $lightBlue;
+		}
+	
+
+
+}
+
+
+a.compass{
+	color:$yellow;
+	@include transition(0.3s ease all);
+
+
+	&:after{
+	    content: "";
+	    position: absolute;
+	    background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+			 viewBox='0 0 191.2 191.2' style='enable-background:new 0 0 191.2 191.2;' xml:space='preserve'>
+			 <style type='text/css'>
+				.st0{fill:#FEB62A;}
+				.st1{opacity:0.5;fill:#FEB62A;enable-background:new    ;}
+			</style>
+			<g>
+				<path class='st0' d='M95.6,0C43,0,0,43,0,95.6s43,95.6,95.6,95.6s95.6-43,95.6-95.6S148.2,0,95.6,0z M95.6,180.3
+					c-46.6,0-84.7-38.1-84.7-84.7S49,10.9,95.6,10.9s84.7,38.1,84.7,84.7S142.2,180.3,95.6,180.3z'/>
+				<path class='st1' d='M67,114.3l-15.5,25.8l25.8-15.5l-1.8-8.1C75.5,116.4,67,114.3,67,114.3z M75.5,76.9l1.8-8.5L51.5,52.9L67,78.7
+					L75.5,76.9z M115.4,116.4l-2.1,8.1l25.4,15.5l-15.5-25.8C123.1,114.3,115.4,116.4,115.4,116.4z M123.1,78.7l15.5-25.8l-25.4,15.5
+					l2.1,8.5C115.4,76.9,123.1,78.7,123.1,78.7z'/>
+				<path class='st0' d='M109.7,81.9l-14.5-60l-14.5,60l-60,14.5l60,14.5l14.5,60l14.5-60l60-14.5L109.7,81.9z M95.3,103.7
+					c-4.2,0-7.4-3.2-7.4-7.4c0-4.2,3.2-7.4,7.4-7.4s7.4,3.2,7.4,7.4C102.3,100.6,99.1,103.7,95.3,103.7z'/>
+			</g>
+			</svg>") no-repeat;
+	        height: 40px;
+		    width: 40px;
+		    margin-top: -6px;
+		    margin-left: 5px;
+
+	}
+
+	&:hover{
+		color:$lightBlue;
+
+		&:after{
+			background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+			 viewBox='0 0 191.2 191.2' style='enable-background:new 0 0 191.2 191.2;' xml:space='preserve'>
+			 <style type='text/css'>
+				.st0{fill:#629ad4;}
+				.st1{opacity:0.5;fill:#629ad4;enable-background:new    ;}
+			</style>
+			<g>
+				<path class='st0' d='M95.6,0C43,0,0,43,0,95.6s43,95.6,95.6,95.6s95.6-43,95.6-95.6S148.2,0,95.6,0z M95.6,180.3
+					c-46.6,0-84.7-38.1-84.7-84.7S49,10.9,95.6,10.9s84.7,38.1,84.7,84.7S142.2,180.3,95.6,180.3z'/>
+				<path class='st1' d='M67,114.3l-15.5,25.8l25.8-15.5l-1.8-8.1C75.5,116.4,67,114.3,67,114.3z M75.5,76.9l1.8-8.5L51.5,52.9L67,78.7
+					L75.5,76.9z M115.4,116.4l-2.1,8.1l25.4,15.5l-15.5-25.8C123.1,114.3,115.4,116.4,115.4,116.4z M123.1,78.7l15.5-25.8l-25.4,15.5
+					l2.1,8.5C115.4,76.9,123.1,78.7,123.1,78.7z'/>
+				<path class='st0' d='M109.7,81.9l-14.5-60l-14.5,60l-60,14.5l60,14.5l14.5,60l14.5-60l60-14.5L109.7,81.9z M95.3,103.7
+					c-4.2,0-7.4-3.2-7.4-7.4c0-4.2,3.2-7.4,7.4-7.4s7.4,3.2,7.4,7.4C102.3,100.6,99.1,103.7,95.3,103.7z'/>
+			</g>
+			</svg>") no-repeat;
+		}
+	}
+}

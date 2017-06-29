@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+NF:
+  tax_method: "I will not file"
+
+Single:
+  tax_method: "Single"
+  
+Joint:
+  tax_method: "Joint"
+  
+  

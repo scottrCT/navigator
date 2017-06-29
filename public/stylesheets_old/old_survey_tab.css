@@ -1,0 +1,115 @@
+body{
+	background-color: #EDEFF3;
+}
+
+img {
+	border: none;
+}
+
+.active {
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+	color: blue;
+	width: 150px;
+}
+
+.buttonLink {
+	border: 0;
+}
+
+.yourDetails {
+	background: url("/images/yourDetails.jpg");
+}
+
+.yourDetailsActive {
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+	color: blue;
+	width: 150px;
+}
+
+.survey_tabnav {
+	color: #000;
+	margin: 13px 0px 0px 0px;
+	padding: 0px;
+	padding-left: 10px;
+}
+
+.survey_tabnav ul {
+	margin: 0px;
+	padding: 0px;
+	/*position: relative;
+	top: 135px;
+	left: 40px;*/
+	height: 125px;
+}
+
+.survey_tabnav li {
+	display: inline;
+	list-style-type: none;
+	width: 150px;
+	height: 20px;
+	background: #EEEEEE;
+}
+
+.survey_tabnav li.active {
+	border-right: 3px solid #FFF;
+	background: #FFFFFF;
+	overflow: visible;
+}
+
+.survey_tabnav li span.disabled {
+        color: #888888;
+        background: #FAFAFA;
+        border: 2px solid #DDDDDD;
+        border-bottom: none;
+        /*padding: 2px 5px 0px 5px;*/
+        margin: 0;
+        text-decoration: none;
+}
+
+.survey_tabnav a {
+	color: #000000;
+	background: #EEEEEE;
+	/*font-weight: bold;
+	padding: 2px 0px 0px 5px;*/
+	margin: 0;
+	text-decoration: none;
+	width: 150px;
+}
+
+.survey_tabnav a.active {
+	border-right: 2px solid #FFF;
+	background: #FFFFFF;
+	margin: 0;
+	text-decoration: none;
+	width: 150px;
+}
+
+.survey_tabnav a:hover {
+	color: #FFFFFF;
+	background: #CCCCCC; 
+}
+
+.survey_tabnav a:visited {
+	color: #000000; 
+}
+
+.survey_tabnav a.active:hover {
+	background: #FFFFFF;
+	color: #000000; 
+}
+
+.survey_tabnav_content {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	/*position: relative;
+	top: -125px;
+	left: 160px;
+	width: 75%;*/
+	padding: 15px;
+	background-color: #FFF;
+}

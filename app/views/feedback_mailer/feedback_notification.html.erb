@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	</head>
+	<body>
+	  <p>
+	  	<% if !@comment.visit_frequency.nil? && !@comment.visit_frequency.blank? %>
+			Visit Frequency:  <%=h @comment.visit_frequency.gsub(/\_/, ' ').capitalize %><br />
+		<% else %>
+			Visit Frequency:  <br />
+		<% end %>
+	  </p>
+	  
+	  <p>	  
+		<% if !@comment.survey_for.nil? && !@comment.survey_for.blank? %>
+			Took the survey for:  <%=h @comment.survey_for.capitalize %><br />
+		<% else %>
+			Took the survey for:  <br />
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.specific_info.nil? && !@comment.specific_info.blank? %>
+			Were they looking for specific information?  <%=h @comment.specific_info.capitalize %><br />		
+		<% else %>
+			Were they looking for specific information?	<br />
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.ease_of_use.nil? && !@comment.ease_of_use.blank? %>
+			Ease of Use:  <%=h @comment.ease_of_use.gsub(/\_/, ' ').capitalize %><br />		
+		<% else %>
+			Ease of Use:  <br />
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.useful.nil? && !@comment.useful.blank? %>
+			Usefulness:  <%=h @comment.useful.gsub(/\_/, ' ').capitalize %><br />		
+		<% else %>
+			Usefulness:  <br />		
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.overall.nil? && !@comment.overall.blank? %>
+			Overall:  <%=h @comment.overall.gsub(/\_/, ' ').capitalize %><br />
+		<% else %>
+			Overall:  <br />
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.comments.nil? && !@comment.comments.blank? %>
+			Other comments:  <%=h @comment.comments %><br />
+		<% else %>
+			Other comments:  <br />
+		<% end %>
+	  </p>
+	  
+	  <p>
+		<% if !@comment.zip.nil? && !@comment.zip.blank? %>
+			Zip code:  <%=h @comment.zip %><br />		
+		<% else %>
+			Zip code:  <br />		
+		<% end %>
+	  </p>
+	  		
+	</body>
+</html>

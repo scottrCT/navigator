@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>TestCase4</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TestCase4</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Benefits Survey</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>How old are you?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>survey_age</td>
+	<td>75</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_residency_id</td>
+	<td>label=US Citizen</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_resident_of_CT</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_have_a_spouse</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>nextFamInfo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>How many children (18 and under) live in your house?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>survey_children_under_18</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>survey_adult_dependants</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_adult_disability</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_pregnant</td>
+	<td>label=No</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[@alt='Next: Income Information']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Are you currently employed?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_currently_employed</td>
+	<td>label=No</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_approved_training_activity</td>
+	<td>label=No</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_spouse_currently_employed</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>survey_spouse_net_income_amt</td>
+	<td>400</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_spouse_net_income_frequency</td>
+	<td>label=Weekly</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_other_income</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>survey_other_income_amt</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_other_income_frequency</td>
+	<td>label=Weekly</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>survey_tax_filing_method_id</td>
+	<td>label=Joint</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[@alt='Review Answers']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Please review and submit if correct...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Survey Results</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ConnPACE </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Medicaid for the Employed Disabled </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Medicare </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Medicare D </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Medicare Savings Programs - QMB - SLMB - ALMB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Property Tax Credit and Rent Rebate </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Utility Assistance - CEAP - CHAP </td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

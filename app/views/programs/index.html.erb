@@ -1,0 +1,21 @@
+<h1 class="header">Programs Overview</h1>
+<h2 class="subheader">Click on the program's name for its description, links to more information, and, when available, an electronic application.</h2>
+<div id="programsListed">
+	<ul>
+	<% for program in @programs %>
+		<li>
+			<span name="<%= h program.name %>" onclick="javascript:$('<%= program.id %>').toggle()" class="programName"><%= h program.name %></span>
+			<br />
+			<div id="<%= program.id %>" style="display: none;">
+			<span class="programDesc"><%= h program.description %></span>
+			<% for link in program.program_links %>
+				<span class="programLink">
+					<%#= link_to "Click for #{link.name}", link.link, :target=>"_blank" %>
+					<%= link_to "Click for #{link.name}", {:controller=>"programs", :action=>"redirect", :id=>link.id}, :target=>"_blank", :title=>"#{link.link}" %>
+				</span>
+			<% end %>
+			</div>
+		</li>
+	<% end %>
+	</ul>
+</div>
