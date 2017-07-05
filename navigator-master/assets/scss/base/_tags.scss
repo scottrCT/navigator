@@ -1,0 +1,47 @@
+body {
+	font-size: 18px;
+	&.questions {
+		background: white;
+	}
+}
+
+a {
+	text-decoration: none;
+	@include ease(all, 0.2s, ease-out);
+	@include hover {
+	}
+}
+
+hr {
+	border: none;
+	height: 5px;
+	width: 50px;
+}
+
+// All the .hs related tags are for the stylgint the HubSpot form embed
+form {
+
+	text-align: left;
+
+	input, textarea, button {
+
+	}
+
+	fieldset {
+
+
+	}
+
+	label {
+		
+	}
+
+	textarea {
+
+	}
+
+	input, textarea {
+
+	}
+
+}

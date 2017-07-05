@@ -34,7 +34,7 @@ class Survey < ActiveRecord::Base
     #Making annualFamilyIncome not include the other income because EITC is calculated using the annual_income_max field and that
     #does not include other income. The other programs that may be erroneously included because of not including that field
     #will be excluded when doing the detailed screening for that program
-    @programs = Program.find(:all, :conditions=>["(fpl_max < 0 AND smi_max < 0 AND annual_income_max < 0) OR (fpl_max > 0 AND fpl_max >= ?) OR (smi_max > 0 AND smi_max >= ?) OR (annual_income_max > 0 AND annual_income_max >= ?)", @fpl_income_pct, @smi_income_pct, annualFamilyIncome(false)], :order=>"name")
+    @programs = Program.find(:all, :conditions=>["active = 1 AND ((fpl_max < 0 AND smi_max < 0 AND annual_income_max < 0) OR (fpl_max > 0 AND fpl_max >= ?) OR (smi_max > 0 AND smi_max >= ?) OR (annual_income_max > 0 AND annual_income_max >= ?))", @fpl_income_pct, @smi_income_pct, annualFamilyIncome(false)], :order=>"name")
       
     logger.debug "Number Programs Returned: #{@programs.size}"
       

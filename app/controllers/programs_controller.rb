@@ -1,6 +1,6 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.find(:all, :order=>"name")
+    @programs = Program.find(:all, :conditions=>["active = 1"], :order=>"name")
   end
   
   def redirect

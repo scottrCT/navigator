@@ -1,0 +1,112 @@
+// FOOTER
+
+// For the sticky footer
+
+$footerHeight: 40px;
+$footerHeightLarge: 60px;
+
+
+main + footer {
+	
+	
+
+}
+
+
+footer {
+  width: 100%;
+  display: block;
+  position: relative;
+  float: left;
+  background: #125790;
+  min-height: 250px;
+  height: auto;
+  padding: 50px 0px; }
+  footer a {
+    color: white; }
+    footer a:hover {
+      opacity: 0.5; }
+
+
+footer p{font-family: 'BentonSans-Light';text-align:left; color:#f3f9ff;font-size:12px; font-weight:lighter;float:left;}
+
+footer ul{float:left;display:block;margin-bottom:32px;padding:0px;font-size: 14px;}
+
+footer ul li{width:150px;display:inline-block;list-style-type: none;}
+
+footer ul li a{transition: all 0.3s ease;text-decoration: none;letter-spacing:0.5px; color:#f3f9ff;padding:5px 0px;opacity:1;}
+
+footer ul:hover > li a {color:#f3f9ff;opacity:0.7;}
+
+footer ul:hover > li a:hover{color:#f3f9ff;opacity:1;}
+
+footer img{transition: all 0.3s ease;padding:10px 12px 0px 12px;float:right;}
+
+footer .line{opacity: 0.3;    
+  width: 100%;
+    background: #d9e5ef;
+    height: 1px;
+    margin:120px 0px 32px 0px;
+    clear: both;
+    float:left;}
+
+
+       footer ul.sub-menu {
+       	display:block;
+        position:absolute;
+        float:left;
+        text-align:left;
+        padding:5px 0px 0px 0px;
+       	margin:0;
+        z-index:300; 
+     }
+      footer ul.sub-menu > li  {
+        text-align:left;
+        vertical-align:top;
+        display:block;
+        font-weight:normal;
+        font-size:12px;
+        
+       }
+     footer ul.sub-menu > li a  {
+        padding:15px 0px;
+        color:#f3f9ff;opacity:0.7;
+     }
+
+
+@media (max-width: 1024px) {
+  
+  footer ul li{width:110px;}
+
+}
+
+
+@media (max-width: 960px) {
+
+
+  footer ul{font-size: 12px;}
+  
+  
+
+  footer ul.sub-menu > li  { font-size: 10px; }
+
+}
+
+@media (max-width: 768px) {
+
+  footer ul.sub-menu { display: none;}
+  footer ul li{width:100%;}
+  footer .line{margin: 32px 0px;}
+}
+
+
+@media (max-width: 400px) {
+
+
+  footer a img{display:none;}
+  
+
+}
+
+
+

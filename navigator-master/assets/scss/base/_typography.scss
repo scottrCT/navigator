@@ -1,0 +1,69 @@
+
+@font-face {font-family: 'BentonSans'; src: url('../fonts/BentonSans-Regular.otf');}
+@font-face {font-family: 'BentonSans-Light'; src: url('../fonts/BentonSans-Light.otf');}
+
+// TYPOGRAPHY
+$font: 'BentonSans';
+
+body{
+	font-family:$font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:$font;
+	margin:0;
+	color: $darkGray;
+}
+
+h1 {
+	font-size: 44px;
+	font-weight:300;
+
+	@include bp($small){
+		font-size: 28px;
+	}
+}
+
+h2 {
+	font-size: 32px;
+	color:$blue;
+
+	@include bp($small){
+		font-size: 21px;
+	}
+}
+
+h3 {
+	font-weight:300;
+}
+
+
+h5 {
+	@extend .small;
+}
+
+h6 {
+	letter-spacing: 4px;
+	@extend .small;
+	@include bp($handsetLarge) {
+		letter-spacing: 1px;
+	}
+}
+
+small {
+	@extend .small;
+}
+
+a {
+	color:$yellow;
+}
+
+p {
+	font-family:$font;
+	line-height:1.4em;
+}
+
+b, strong { font-weight: 600; }
+
+
+//REM CALCULATION & GOLDEN RATION VERTICAL RHYTHM

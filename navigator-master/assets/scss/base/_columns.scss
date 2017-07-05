@@ -1,0 +1,45 @@
+// Based on susy grid
+// Not always necessary to use
+// If the SASS processor is fast then use @include span() all you want
+
+$totalColumns: map-get($susy, columns);
+
+@for $i from 1 through $totalColumns {
+	.span#{$i} {
+		@include span($i of $totalColumns);
+	}
+	.pre#{$i} {
+		@include pre($i of $totalColumns);
+	}
+	.post#{$i} {
+		@include post($i of $totalColumns);
+	}
+	.squish#{$i} {
+		@include squish($i of $totalColumns);
+	}
+	.pad#{$i} {
+		@include pad($i of $totalColumns);
+	}
+}
+.span-full {
+	@include span(full);
+}
+.first { @include first; }
+.last { @include last; }
+
+
+@include bp($small){
+	@for $i from 1 through $totalColumns {
+		.span#{$i} {
+			width:100%;
+		}
+		.pre#{$i} {
+			margin:initial;
+		}
+		.post#{$i} {
+			margin:initial;
+		}
+		
+	}
+
+}

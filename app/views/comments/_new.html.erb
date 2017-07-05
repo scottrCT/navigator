@@ -2,7 +2,15 @@
 <div id="feedback">
 <br />	
 <% remote_form_for(@comment, :update=>"main_tabnav_content", :url=>{:controller => "comments", :action => "create"}) do |f| %>
-	
+	 <div id = "other"class="questions">
+          2-1-1/United Way of Connecticut - Additional Ways to Contact Us or Get Help <br /><br/>
+          If you are looking for help, dial 2-1-1 or 1-800-203-1234, from anywhere in Connecticut and you can speak with a call specialist who will help you locate programs and services in your area.
+          <ul>
+           <li>To email us, <a href="https://forms.ctunitedway.org/feedback/" target="_blank">click here</a></li>
+           <li>Or visit our website, for additional resources, at <a href="http://www.211ct.org" target="_blank">www.211ct.org</a></li>
+          </ul>
+        </div>
+
 	<div id="visit" class="questions">
 		<div class="q">
 			<%= f.label :visit_frequency, "How many times have you visited the 2-1-1 Navigator?" %>
@@ -97,6 +105,7 @@
 			<%= recaptcha_tags :ajax=>true, :id=>"recaptcha", :display => {:theme=>'blackglass', :tabindex=>4} %>
 		</div>
 	</div>
+
     <%= submit_tag "Submit Feedback", :onclick=>"if (document.getElementById('comment_comments').value!=''){ return confirm('Please note that this form is for feedback purposes only.  If you are looking for help, please dial 2-1-1 from anywhere in CT.  The call is free.');}", :class=>"submitBtn" %>
 	<%= f.error_messages %>
 <% end %>

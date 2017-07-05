@@ -1,0 +1,77 @@
+// VARIABLES
+
+//GRID
+
+$susy: (
+
+	columns				: 12,
+	gutters				: 0.25,
+	global-box-sizing	: border-box,
+
+	//	debug: (image: show)
+
+);
+
+
+// COLORS
+$red 				: RED; // always keep for errors
+$green 				: GREEN; // always keep for success
+$orange 			: ORANGE; // always keep for warnings
+$blue 				: #55ACEE; // always keep for message color
+$extraLightGray		: #DDDDDD;
+$lightGray			: #999999;
+$darkGray			: #333333;
+$black				: #222222; // Keep a variable option for black, in case you use a variation or shade of it
+$white 				: #EEEEEE; // Keep a variable option for variable white
+
+$blue				: #125790;
+$lightBlue			: #629ad4;
+$lightestBlue		: #e8f2fd;
+$yellow				: #feb62a;
+$lightYellow		: #fff0d4;
+$gray				: #f5f5f5;
+
+
+
+// Social colors
+$facebook		: #3b5999;
+$twitter		: #55ACEE;
+$linkedin		: #0977b5;
+$instagram		: #3f729b;
+$pinterest      : #ce1a19;
+$youtube        : #ff3333;
+$googleplus     : #e0452c;
+$socialNames	: facebook, twitter, linkedin, instagram, pinterest, youtube, googleplus;
+$socialColors	: $facebook, $twitter, $linkedin, $instagram, $pinterest, $youtube, $googleplus;
+
+
+// BREAKPOINTS
+// Uses http://breakpoint-sass.com & https://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints
+
+$handsetSmall       : max-width 360px;
+$handsetMedium      : max-width 400px;
+$handsetLarge       : max-width 480px;
+
+$tabletSmall        : max-width 600px;
+$tabletMedium       : max-width 720px;
+$tabletLarge        : max-width 840px;
+
+$desktopSmall 		: max-width 960px;
+$desktopMedium   	: max-width 1024px;
+$desktopLarge 		: max-width 1280px;
+$desktopXlarge 	    : max-width 1440px;
+$desktopXxlarge 	: max-width 1600px;
+$desktopXxxlarge 	: max-width 1920px;
+
+//General Breakpoint
+
+$tiny 		: $handsetLarge;
+$small 		: $tabletLarge;
+$medium 	: $desktopMedium;
+$large 		: $desktopLarge;
+$xlarge 	: $desktopXlarge;
+
+
+// EASING
+
+$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);

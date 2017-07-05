@@ -14,7 +14,8 @@
 	<span id="navlogo">
 		<%= link_to(image_tag("211NavLogo.jpg", :alt=>"Go to the Benefits Survey", :title=>"Click to go to the benefits survey"), :controller => 'surveys', :action => 'start_new_survey')  %>
 		<br />
-		Click the logo to begin<br />the benefits survey
+		<!--Click the logo to begin<br />the benefits survey-->
+                <%#= link_to("Take Survey", {:controller => 'surveys', :action => 'start_new_survey'}, :class => "nice small radius blue button")  %>
 		<br />
 	</span>
 </div>
@@ -24,11 +25,14 @@ Think of the benefits survey as an interactive interview. First we ask some basi
 Once you are done, we will tell you which federal and state assistance programs you may qualify for, and how to apply for them. The 2-1-1 Navigator can't promise you will qualify, but it can tell you if it's worth your time to apply.
 <br /><br />
 Don't worry about your privacy. We don't ask for your name or address.
-<br /><br /><br />
-<span style="font-size: 90%">
+<br /><br />
+<%= link_to("Start by clicking here", {:controller => 'surveys', :action => 'start_new_survey'}, :class => "nice small radius blue button")  %>
+<br />
+<!--<span style="font-size: 90%">
 	We need your feedback on this website.<br />
 	Your comments will shape future updates.<br />
-	<%= link_to "Click here to fill out a satisfaction survey", :controller => "comments", :action => "new" %>
+	<%#= link_to "Click here to fill out a satisfaction survey", :controller => "comments", :action => "new" %>
 </span>
+-->
 </div>
 </div>

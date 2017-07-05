@@ -9,10 +9,6 @@ class SurveysController < ApplicationController
       format.xml  { render :xml => @surveys }
     end
   end
-
-  def screener
-    render
-  end
 ###############################################################################################################################################
 # Description : Saves the survey object to the database.
 ############################################################################################################################################### 

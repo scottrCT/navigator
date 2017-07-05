@@ -234,3 +234,43 @@ div#survey_tabnav_content img.help {
   list-style: square; 
 } 
 /* Error Reporting Styles - End */
+
+.nice.blue.button {
+    border: 1px solid #174171;
+     background-color: #174171;
+}
+.nice.small.button {
+    background-position: 0 -36px;
+}
+.blue.button {
+    background-color: #174171;
+}
+.small.button {
+    font-size: 14px;
+    padding: 8px 20px 10px;
+    width: auto;
+}
+.button.radius {
+    border-radius: 3px;
+}
+.button.nice {
+    background: url("../images/misc/button-gloss.png") repeat-x scroll 0 -34px #00a6fc;
+    border: 1px solid #0593dc;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.28);
+    transition: background-color 0.15s ease-in-out 0s;
+}
+.button {
+    background: none repeat scroll 0 0 #00a6fc;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue","Helvetica",Arial,Verdana,sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 1;
+    padding: 9px 34px 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}

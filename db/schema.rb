@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100920211031) do
+ActiveRecord::Schema.define(:version => 20141226193907) do
 
   create_table "comments", :force => true do |t|
     t.string   "visit_frequency"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20100920211031) do
     t.string   "method_nm"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
 
   create_table "residencies", :force => true do |t|
